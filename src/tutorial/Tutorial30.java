@@ -6,7 +6,6 @@ import org.apache.commons.io.FileUtils;
 
 import com.tinkerpop.gremlin.neo4j.structure.Neo4jGraph;
 import com.tinkerpop.gremlin.process.computer.ComputerResult;
-import com.tinkerpop.gremlin.process.computer.VertexProgram;
 import com.tinkerpop.gremlin.process.computer.ranking.pagerank.PageRankVertexProgram;
 import com.tinkerpop.gremlin.structure.Vertex;
 
@@ -32,9 +31,9 @@ public class Tutorial30 {
 		peter.addEdge(	"created", 	lop, 	"weight", 0.2f);
 
 		// g.compute(PageRankVertexProgram.build().create().execute(vertex, messenger, memory);)
-		VertexProgram<Double> pagerank = PageRankVertexProgram.build()
-										.vertexCount(6)
-										.create();
+//		VertexProgram<Double> pagerank = PageRankVertexProgram.build()
+//										.vertexCount(6)
+//										.create();
 		
 		ComputerResult result = g.compute().program(PageRankVertexProgram.build().create()).submit().get();
 		
